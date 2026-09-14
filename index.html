@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Встановлення сонячних панелей та інверторів під ключ — консультація, монтаж, налаштування</title>
+<meta name="description" content="Професійний монтаж сонячних панелей, інверторів та акумуляторних систем для дому і бізнесу. Консультація, підбір обладнання, монтаж, налаштування та запуск.">
+
+<!-- ЗАМІНІТЬ: реальне ім'я/бренд, фото, телефон, месенджери, регіон роботи — позначено коментарями ЗАМІНІТЬ по всьому файлу -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0E1116;
+    --ink-soft:#171B23;
+    --ink-line:#2A303B;
+    --paper:#F4F5F2;
+    --paper-dim:#E6E8E2;
+    --paper-card:#FFFFFF;
+    --amber:#F5A623;
+    --amber-dark:#D98C12;
+    --teal:#1F8A94;
+    --teal-light:#2AA6B1;
+    --text-dark:#181B20;
+    --text-body:#3B4048;
+    --muted:#6C7480;
+    --text-light:#ECEEEA;
+    --text-light-muted:#AEB4BE;
+    --radius-s:6px;
+    --radius-m:10px;
+    --maxw:1180px;
+    --shadow:0 1px 2px rgba(14,17,22,.06), 0 8px 24px rgba(14,17,22,.06);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+  body{
+    margin:0;
+    font-family:'Public Sans', -apple-system, sans-serif;
+    color:var(--text-body);
+    background:var(--paper);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk', sans-serif;
+    color:var(--text-dark);
+    margin:0;
+    line-height:1.15;
+    font-weight:600;
+  }
+  p{margin:0;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ul{margin:0; padding:0; list-style:none;}
+  button{font-family:inherit;}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  section{padding:88px 0;}
+  @media (max-width:720px){section{padding:56px 0;}}
+
+  .eyebrow{
+    display:inline-block;
+    font-size:14px;
+    color:var(--teal);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .section-head{max-width:640px; margin-bottom:48px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,36px); letter-spacing:-.01em;}
+  .section-head p{margin-top:14px; font-size:17px; color:var(--muted);}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+
+  /* icon sprite */
+  .icon{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(14,17,22,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--ink-line);
+  }
+  .nav-wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; max-width:var(--maxw); margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:10px; color:var(--text-light);}
+  .brand-mark{
+    width:34px; height:34px; border-radius:8px;
+    background:linear-gradient(135deg,var(--amber),var(--teal));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .brand-mark svg{width:19px;height:19px;stroke:#0E1116;stroke-width:2;fill:none;}
+  .brand-name{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px;}
+  .brand-name span{display:block; font-family:'Public Sans',sans-serif; font-weight:400; font-size:11.5px; color:var(--text-light-muted); margin-top:1px;}
+
+  nav.main-nav{display:flex; gap:28px;}
+  nav.main-nav a{color:var(--text-light-muted); font-size:14.5px; font-weight:500; transition:color .15s;}
+  nav.main-nav a:hover, nav.main-nav a:focus-visible{color:var(--text-light);}
+
+  .nav-actions{display:flex; align-items:center; gap:14px;}
+  .nav-phone{display:flex; align-items:center; gap:8px; color:var(--text-light); font-weight:600; font-size:15px;}
+  .nav-phone .icon{width:17px;height:17px; color:var(--amber);}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:12px 22px; border-radius:var(--radius-s); font-weight:600; font-size:15px;
+    border:1px solid transparent; cursor:pointer; transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    white-space:nowrap;
+  }
+  .btn:focus-visible{outline:2px solid var(--teal-light); outline-offset:2px;}
+  .btn-primary{background:var(--amber); color:#1A1300;}
+  .btn-primary:hover{background:var(--amber-dark);}
+  .btn-outline-dark{background:transparent; border-color:var(--ink-line); color:var(--text-light);}
+  .btn-outline-dark:hover{border-color:var(--text-light-muted);}
+  .btn-outline-light{background:transparent; border-color:var(--paper-dim); color:var(--text-dark);}
+  .btn-outline-light:hover{border-color:var(--muted);}
+  .btn-block{width:100%;}
+  .btn-sm{padding:9px 16px; font-size:13.5px;}
+
+  .burger{display:none; background:none; border:none; color:var(--text-light); padding:6px; cursor:pointer;}
+
+  @media (max-width:940px){
+    nav.main-nav{
+      position:fixed; inset:64px 0 0 0; background:var(--ink);
+      flex-direction:column; padding:24px; gap:4px;
+      transform:translateY(-8px); opacity:0; pointer-events:none; transition:opacity .18s ease, transform .18s ease;
+    }
+    nav.main-nav.open{opacity:1; transform:translateY(0); pointer-events:auto;}
+    nav.main-nav a{padding:14px 4px; border-bottom:1px solid var(--ink-line); font-size:16px;}
+    .nav-phone{display:none;}
+    .burger{display:flex;}
+    .nav-actions .btn{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:radial-gradient(circle at 82% 18%, #1B2430 0%, var(--ink) 55%);
+    color:var(--text-light);
+    padding:76px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .container{display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;}
+  @media (max-width:940px){.hero .container{grid-template-columns:1fr; gap:40px;}}
+  .hero-eyebrow{display:flex; align-items:center; gap:8px; color:var(--teal-light); font-weight:600; font-size:14px; margin-bottom:20px;}
+  .hero-eyebrow .dot{width:7px;height:7px;border-radius:50%; background:var(--teal-light);}
+  .hero h1{font-size:clamp(32px,4.6vw,50px); letter-spacing:-.015em;}
+  .hero-sub{margin-top:20px; font-size:18px; color:var(--text-light-muted); max-width:520px;}
+  .hero-ctas{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .hero-meta{display:flex; gap:28px; margin-top:36px; flex-wrap:wrap;}
+  .hero-meta-item{display:flex; align-items:center; gap:10px; font-size:14.5px; color:var(--text-light-muted);}
+  .hero-meta-item .icon{color:var(--amber); width:18px; height:18px;}
+  .hero-meta-item strong{color:var(--text-light); font-weight:600;}
+
+  .hero-art{position:relative;}
+  .hero-art svg{width:100%; height:auto; display:block;}
+
+  /* ---------- TRUST / PERSONAL ---------- */
+  .trust{background:var(--ink-soft); color:var(--text-light); border-top:1px solid var(--ink-line); border-bottom:1px solid var(--ink-line);}
+  .trust .container{display:grid; grid-template-columns:120px 1fr; gap:32px; align-items:center;}
+  @media (max-width:720px){.trust .container{grid-template-columns:1fr; text-align:left;}}
+  .trust-photo{
+    width:104px; height:104px; border-radius:50%;
+    background:linear-gradient(150deg,#232B38,#171B23);
+    border:1px solid var(--ink-line);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--text-light-muted); font-size:11px; text-align:center; padding:8px;
+  }
+  .trust blockquote{margin:0; font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:500; color:var(--text-light); line-height:1.5; max-width:760px;}
+  .trust cite{display:block; margin-top:14px; font-family:'Public Sans',sans-serif; font-style:normal; font-size:14px; font-weight:600; color:var(--teal-light);}
+  .trust cite span{display:block; font-weight:400; color:var(--text-light-muted); font-size:13px; margin-top:2px;}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:940px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.services-grid{grid-template-columns:1fr;}}
+  .service-card{
+    background:var(--paper-card); border:1px solid var(--paper-dim); border-radius:var(--radius-m);
+    padding:26px 24px; box-shadow:var(--shadow);
+  }
+  .service-icon{
+    width:44px; height:44px; border-radius:10px; background:#0E1116;
+    display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+  }
+  .service-icon .icon{color:var(--amber); width:22px; height:22px;}
+  .service-card h3{font-size:18px; margin-bottom:8px;}
+  .service-card p{font-size:14.5px; color:var(--muted);}
+
+  /* ---------- PROBLEMS ---------- */
+  .problems{background:var(--ink); color:var(--text-light);}
+  .problems .section-head p{color:var(--text-light-muted);}
+  .problems .section-head h2{color:var(--text-light);}
+  .problems-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--ink-line); border:1px solid var(--ink-line); border-radius:var(--radius-m); overflow:hidden;}
+  @media (max-width:720px){.problems-grid{grid-template-columns:1fr;}}
+  .problem-item{background:var(--ink-soft); padding:32px 30px;}
+  .problem-item h3{color:var(--text-light); font-size:18px; margin-bottom:10px; display:flex; align-items:center; gap:10px;}
+  .problem-item h3 .icon{color:var(--amber); width:20px; height:20px;}
+  .problem-item p{color:var(--text-light-muted); font-size:14.5px;}
+
+  /* ---------- WHY ME ---------- */
+  .why-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px 40px;}
+  @media (max-width:720px){.why-grid{grid-template-columns:1fr;}}
+  .why-item{display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid var(--paper-dim);}
+  .why-item .icon{color:var(--teal); width:20px; height:20px; margin-top:2px;}
+  .why-item h3{font-size:16.5px; margin-bottom:4px;}
+  .why-item p{font-size:14px; color:var(--muted);}
+
+  /* ---------- PORTFOLIO ---------- */
+  .portfolio{background:var(--ink-soft); color:var(--text-light);}
+  .portfolio .section-head h2{color:var(--text-light);}
+  .portfolio .section-head p{color:var(--text-light-muted);}
+  .portfolio-note{
+    display:flex; gap:12px; align-items:flex-start;
+    background:rgba(245,166,35,.08); border:1px solid rgba(245,166,35,.28);
+    border-radius:var(--radius-m); padding:16px 18px; margin-bottom:36px; max-width:760px;
+  }
+  .portfolio-note .icon{color:var(--amber); width:19px; height:19px; margin-top:2px;}
+  .portfolio-note p{font-size:14px; color:var(--text-light-muted);}
+  .portfolio-note strong{color:var(--text-light);}
+  .portfolio-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:940px){.portfolio-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:640px){.portfolio-grid{grid-template-columns:1fr;}}
+  .pf-card{background:var(--ink); border:1px solid var(--ink-line); border-radius:var(--radius-m); overflow:hidden;}
+  .pf-media{
+    height:150px; position:relative;
+    background:linear-gradient(135deg,#1B2430,#0E1116);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .pf-media svg{width:64px; height:64px; color:#333B48;}
+  .pf-badge{
+    position:absolute; top:10px; left:10px; font-size:11px; font-weight:600;
+    background:rgba(14,17,22,.85); color:var(--text-light-muted); padding:4px 9px; border-radius:20px;
+    border:1px solid var(--ink-line);
+  }
+  .pf-body{padding:18px 20px;}
+  .pf-body h3{color:var(--text-light); font-size:16px; margin-bottom:10px;}
+  .pf-facts{display:grid; grid-template-columns:1fr 1fr; gap:8px 14px; font-size:12.5px;}
+  .pf-facts dt{color:var(--text-light-muted);}
+  .pf-facts dd{margin:0; color:var(--text-light); font-weight:600;}
+
+  /* ---------- PROCESS ---------- */
+  .process-list{display:flex; flex-direction:column;}
+  .process-item{
+    display:grid; grid-template-columns:56px 1fr; gap:22px;
+    padding:22px 0; border-bottom:1px solid var(--paper-dim);
+  }
+  .process-item:last-child{border-bottom:none;}
+  .process-num{
+    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:20px; color:var(--teal);
+    display:flex; align-items:flex-start;
+  }
+  .process-item h3{font-size:17px; margin-bottom:6px;}
+  .process-item p{font-size:14.5px; color:var(--muted); max-width:560px;}
+
+  /* ---------- REVIEWS ---------- */
+  .reviews-placeholder{
+    border:1.5px dashed var(--paper-dim); border-radius:var(--radius-m);
+    padding:48px 32px; text-align:center; max-width:640px; margin:0 auto;
+  }
+  .reviews-placeholder .icon{width:30px; height:30px; color:var(--teal); margin:0 auto 16px;}
+  .reviews-placeholder h3{font-size:19px; margin-bottom:10px;}
+  .reviews-placeholder p{color:var(--muted); font-size:14.5px;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px;}
+  .faq-item{border-bottom:1px solid var(--paper-dim);}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:20px 2px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:16.5px; color:var(--text-dark);
+  }
+  .faq-q .icon{width:18px; height:18px; color:var(--muted); flex-shrink:0; transition:transform .2s ease;}
+  .faq-item[data-open="true"] .faq-q .icon{transform:rotate(180deg); color:var(--teal);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .22s ease;}
+  .faq-a-inner{padding:0 2px 20px; font-size:14.5px; color:var(--muted); max-width:660px;}
+
+  /* ---------- CONTACT / FORM ---------- */
+  .contact{background:var(--ink); color:var(--text-light);}
+  .contact .container{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;}
+  @media (max-width:940px){.contact .container{grid-template-columns:1fr; gap:36px;}}
+  .contact .section-head h2{color:var(--text-light);}
+  .contact-info-item{display:flex; gap:14px; align-items:flex-start; margin-bottom:22px;}
+  .contact-info-item .icon{color:var(--amber); width:20px; height:20px; margin-top:2px;}
+  .contact-info-item h4{color:var(--text-light); font-size:15px; font-weight:600; margin-bottom:3px;}
+  .contact-info-item p, .contact-info-item a{color:var(--text-light-muted); font-size:14.5px;}
+  .contact-info-item a:hover{color:var(--text-light);}
+
+  .form-card{background:var(--ink-soft); border:1px solid var(--ink-line); border-radius:var(--radius-m); padding:30px;}
+  .form-row{margin-bottom:16px;}
+  .form-row label{display:block; font-size:13.5px; font-weight:600; color:var(--text-light-muted); margin-bottom:7px;}
+  .form-row input, .form-row select, .form-row textarea{
+    width:100%; background:var(--ink); border:1px solid var(--ink-line); border-radius:var(--radius-s);
+    padding:12px 14px; font-size:15px; color:var(--text-light); font-family:inherit;
+  }
+  .form-row input::placeholder, .form-row textarea::placeholder{color:#5A6270;}
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{outline:2px solid var(--teal-light); outline-offset:1px; border-color:var(--teal-light);}
+  .form-row textarea{resize:vertical; min-height:88px;}
+  .form-two{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:520px){.form-two{grid-template-columns:1fr;}}
+  .form-note{font-size:12.5px; color:var(--text-light-muted); margin-top:14px; text-align:center;}
+  .form-success{
+    display:none; text-align:center; padding:20px; border-radius:var(--radius-s);
+    background:rgba(31,138,148,.12); border:1px solid rgba(31,138,148,.35); color:var(--text-light);
+  }
+  .form-success.show{display:block;}
+  .form-card.submitted form{display:none;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink-soft); border-top:1px solid var(--ink-line); color:var(--text-light-muted); padding:48px 0 28px;}
+  .footer-top{display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; padding-bottom:32px; border-bottom:1px solid var(--ink-line); margin-bottom:24px;}
+  .footer-brand p{max-width:320px; font-size:14px; margin-top:10px;}
+  .footer-links{display:flex; gap:60px; flex-wrap:wrap;}
+  .footer-col h4{color:var(--text-light); font-size:13.5px; margin-bottom:14px;}
+  .footer-col a, .footer-col p{display:block; font-size:14px; margin-bottom:9px; color:var(--text-light-muted);}
+  .footer-col a:hover{color:var(--text-light);}
+  .footer-bottom{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:12.5px;}
+
+  /* ---------- MOBILE STICKY CTA ---------- */
+  .mobile-cta{
+    display:none; position:fixed; bottom:0; left:0; right:0; z-index:60;
+    background:var(--ink-soft); border-top:1px solid var(--ink-line);
+    padding:10px 14px; gap:10px;
+  }
+  @media (max-width:720px){.mobile-cta{display:flex;}}
+  .mobile-cta a{
+    flex:1; display:flex; align-items:center; justify-content:center; gap:8px;
+    padding:12px; border-radius:var(--radius-s); font-weight:600; font-size:14px;
+  }
+  .mobile-cta .call{background:var(--amber); color:#1A1300;}
+  .mobile-cta .msg{background:var(--ink); color:var(--text-light); border:1px solid var(--ink-line);}
+  body{padding-bottom:0;}
+  @media (max-width:720px){body{padding-bottom:66px;}}
+</style>
+</head>
+<body>
+
+<!-- SVG ICON SPRITE -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 7V3M15 7V3M7 7h10v4a5 5 0 0 1-10 0V7z"/><path d="M12 16v3M9 21h6"/></symbol>
+    <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2"/><path d="M22 10v4"/><path d="M7 12h4l-1.5 3 4-3.5H10L11.5 9"/></symbol>
+    <symbol id="i-house" viewBox="0 0 24 24"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 21V10l8-6 8 6v11"/><path d="M4 14h16M12 4v17"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l1.5 5-2 1.5a11 11 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 6.2 2 2 0 0 1 6 3z"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21 4 3 11.5l6 2M21 4 17.5 20 9 13.5M21 4 9 13.5v6l3.2-3.6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11.5a7 7 0 1 0-14 0C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14 7l3 3-8 8H6v-3l8-8z"/><path d="M17 4l3 3-2 2-3-3z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".5" fill="currentColor"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 12V5.5a1.5 1.5 0 0 1 3 0V11"/><path d="M11 11V4a1.5 1.5 0 0 1 3 0v7"/><path d="M14 11V5.5a1.5 1.5 0 0 1 3 0V13"/><path d="M8 12l-1.5 1a2 2 0 0 0-.7 2.3l1 3A4 4 0 0 0 10.6 21H16a4 4 0 0 0 4-4v-4"/></symbol>
+    <symbol id="i-comment" viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4V5z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24"><use href="#i-sun"/></svg></span>
+      <span class="brand-name"><!-- ЗАМІНІТЬ: ім'я / бренд -->Ім'я Прізвище<span>монтаж сонячних систем</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#poslugy">Послуги</a>
+      <a href="#problemy">Проблеми</a>
+      <a href="#perevagy">Переваги</a>
+      <a href="#roboty">Роботи</a>
+      <a href="#proces">Процес</a>
+      <a href="#vidguky">Відгуки</a>
+      <a href="#faq">Питання</a>
+      <a href="#kontakty">Контакти</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="tel:+380000000000" class="nav-phone"><!-- ЗАМІНІТЬ: телефон -->
+        <svg class="icon"><use href="#i-phone"/></svg> +380 (00) 000 00 00
+      </a>
+      <a href="#kontakty" class="btn btn-primary btn-sm">Отримати консультацію</a>
+      <button class="burger" id="burgerBtn" aria-label="Відкрити меню" aria-expanded="false">
+        <svg class="icon" id="burgerIcon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <div class="hero-eyebrow"><span class="dot"></span> Виїзд на монтаж: <!-- ЗАМІНІТЬ: регіон --> Київська область та м. Київ</div>
+        <h1>Встановлення сонячних панелей та інверторів під ключ</h1>
+        <p class="hero-sub">Консультую, підбираю обладнання під ваш будинок чи бізнес, монтую, підключаю та запускаю систему. Особисто відповідаю за кожен етап — від першої розмови до запуску.</p>
+        <div class="hero-ctas">
+          <a href="#kontakty" class="btn btn-primary">Отримати консультацію</a>
+          <a href="#kontakty" class="btn btn-outline-dark">Розрахувати вартість</a>
+        </div>
+        <div class="hero-meta">
+          <span class="hero-meta-item"><svg class="icon"><use href="#i-phone"/></svg> <strong><!-- ЗАМІНІТЬ -->+380 (00) 000 00 00</strong></span>
+          <span class="hero-meta-item"><svg class="icon"><use href="#i-telegram"/></svg> Telegram / WhatsApp</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 300 L150 210 L260 300 Z" fill="#171B23" stroke="#2A303B"/>
+          <rect x="60" y="300" width="180" height="70" fill="#12161D" stroke="#2A303B"/>
+          <g transform="translate(60,230) rotate(-18)">
+            <rect x="0" y="0" width="150" height="60" rx="3" fill="#1B2430" stroke="#3B4450"/>
+            <line x1="0" y1="15" x2="150" y2="15" stroke="#3B4450"/>
+            <line x1="0" y1="30" x2="150" y2="30" stroke="#3B4450"/>
+            <line x1="0" y1="45" x2="150" y2="45" stroke="#3B4450"/>
+            <line x1="37.5" y1="0" x2="37.5" y2="60" stroke="#3B4450"/>
+            <line x1="75" y1="0" x2="75" y2="60" stroke="#3B4450"/>
+            <line x1="112.5" y1="0" x2="112.5" y2="60" stroke="#3B4450"/>
+          </g>
+          <circle cx="370" cy="90" r="34" fill="none" stroke="#F5A623" stroke-width="2"/>
+          <g stroke="#F5A623" stroke-width="2" stroke-linecap="round">
+            <line x1="370" y1="30" x2="370" y2="44"/>
+            <line x1="370" y1="136" x2="370" y2="150"/>
+            <line x1="310" y1="90" x2="324" y2="90"/>
+            <line x1="416" y1="90" x2="430" y2="90"/>
+            <line x1="328" y1="48" x2="337" y2="57"/>
+            <line x1="403" y1="123" x2="412" y2="132"/>
+            <line x1="412" y1="48" x2="403" y2="57"/>
+            <line x1="337" y1="123" x2="328" y2="132"/>
+          </g>
+          <path d="M355 118 Q368 150 190 250" fill="none" stroke="#1F8A94" stroke-width="2" stroke-dasharray="5 6"/>
+          <rect x="270" y="330" width="34" height="20" rx="2" fill="#1B2430" stroke="#1F8A94"/>
+          <path d="M280 340h6l-2 5 8-7h-6l2-5" stroke="#1F8A94" stroke-width="1.4" fill="none"/>
+          <path d="M240 305 Q255 320 270 335" fill="none" stroke="#1F8A94" stroke-width="2" stroke-dasharray="5 6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="container">
+      <div class="trust-photo"><!-- ЗАМІНІТЬ на фото --> Ваше фото</div>
+      <div>
+        <blockquote>«Я безпосередньо займаюся монтажем сонячних систем і знаю обладнання не лише за характеристиками, а й на практиці — від першого підключення до щоденної експлуатації.»</blockquote>
+        <cite><!-- ЗАМІНІТЬ: ім'я -->Ім'я Прізвище<span>Монтаж, налаштування та запуск сонячних систем</span></cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="poslugy">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Послуги</span>
+        <h2>Що я встановлюю</h2>
+        <p>Працюю як з комплексними системами під ключ, так і з окремими завданнями — від підключення одного інвертора до повної електростанції.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><svg class="icon"><use href="#i-sun"/></svg></div>
+          <h3>Сонячні панелі</h3>
+          <p>Підбір і монтаж панелей на дах чи наземну конструкцію з урахуванням орієнтації, затінення та навантаження.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg class="icon"><use href="#i-plug"/></svg></div>
+          <h3>Гібридні інвертори</h3>
+          <p>Встановлення та налаштування гібридних інверторів для роботи з мережею, панелями та акумуляторами одночасно.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg class="icon"><use href="#i-grid"/></svg></div>
+          <h3>Мережеві інвертори</h3>
+          <p>Монтаж мережевих (on-grid) інверторів для зниження споживання електроенергії з мережі.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg class="icon"><use href="#i-battery"/></svg></div>
+          <h3>Акумуляторні системи</h3>
+          <p>Підбір ємності та монтаж акумуляторів для зберігання енергії та роботи під час відключень.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg class="icon"><use href="#i-shield"/></svg></div>
+          <h3>Резервне живлення</h3>
+          <p>Системи автоматичного резерву, які тримають світло, опалення та зв'язок під час відключень.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg class="icon"><use href="#i-house"/></svg></div>
+          <h3>Комплексні системи</h3>
+          <p>Повна сонячна електростанція під ключ: панелі, інвертор, акумулятор, монтаж і запуск.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section class="problems" id="problemy">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" style="color:#2AA6B1">Задачі клієнтів</span>
+        <h2>Які проблеми вирішую</h2>
+      </div>
+      <div class="problems-grid">
+        <div class="problem-item">
+          <h3><svg class="icon"><use href="#i-shield"/></svg>Вимикають електрику?</h3>
+          <p>Встановлю систему резервного живлення, яка автоматично тримає найважливіші прилади в домі.</p>
+        </div>
+        <div class="problem-item">
+          <h3><svg class="icon"><use href="#i-sun"/></svg>Великі рахунки за електроенергію?</h3>
+          <p>Підберу сонячну систему, яка знизить споживання з мережі та окупить себе на дистанції.</p>
+        </div>
+        <div class="problem-item">
+          <h3><svg class="icon"><use href="#i-tool"/></svg>Вже купили інвертор чи панелі?</h3>
+          <p>Виконаю професійний монтаж, підключення та налаштування вже придбаного обладнання.</p>
+        </div>
+        <div class="problem-item">
+          <h3><svg class="icon"><use href="#i-target"/></svg>Не знаєте, яке обладнання обрати?</h3>
+          <p>Проаналізую споживання та навантаження і підберу систему саме під ваш будинок чи бізнес.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ME -->
+  <section id="perevagy">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Чому звертаються до мене</span>
+        <h2>Переваги роботи зі мною</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <svg class="icon"><use href="#i-tool"/></svg>
+          <div><h3>Практичний досвід монтажу</h3><p>Виконую роботи особисто, а не передаю бригаді підрядників.</p></div>
+        </div>
+        <div class="why-item">
+          <svg class="icon"><use href="#i-target"/></svg>
+          <div><h3>Індивідуальний підбір обладнання</h3><p>Систему підбираю під реальне навантаження, а не типовий пакет.</p></div>
+        </div>
+        <div class="why-item">
+          <svg class="icon"><use href="#i-check"/></svg>
+          <div><h3>Акуратний монтаж</h3><p>Кабель-менеджмент, кріплення та підключення виконуються охайно й безпечно.</p></div>
+        </div>
+        <div class="why-item">
+          <svg class="icon"><use href="#i-plug"/></svg>
+          <div><h3>Налаштування системи</h3><p>Після монтажу налаштовую роботу інвертора, пріоритети та параметри під ваші потреби.</p></div>
+        </div>
+        <div class="why-item">
+          <svg class="icon"><use href="#i-comment"/></svg>
+          <div><h3>Консультація на кожному етапі</h3><p>Пояснюю, як працює система і як нею користуватись, без зайвих термінів.</p></div>
+        </div>
+        <div class="why-item">
+          <svg class="icon"><use href="#i-shield"/></svg>
+          <div><h3>Гарантія на виконані роботи</h3><p><!-- ЗАМІНІТЬ: реальні умови гарантії -->Даю гарантію на монтаж і підключення.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="roboty">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" style="color:#2AA6B1">Портфоліо</span>
+        <h2>Мої роботи</h2>
+        <p>Реальні об'єкти з фото, параметрами обладнання та виконаними роботами.</p>
+      </div>
+      <div class="portfolio-note">
+        <svg class="icon"><use href="#i-tool"/></svg>
+        <p><strong>Для власника сайту:</strong> картки нижче — шаблон структури. Замініть ілюстрації на реальні фото об'єктів і заповніть фактичні дані перед публікацією.</p>
+      </div>
+      <div class="portfolio-grid">
+        <article class="pf-card">
+          <div class="pf-media"><span class="pf-badge">шаблон</span><svg viewBox="0 0 24 24"><use href="#i-house"/></svg></div>
+          <div class="pf-body">
+            <h3><!-- ЗАМІНІТЬ -->Приватний будинок, м. Місто</h3>
+            <dl class="pf-facts">
+              <dt>Інвертор</dt><dd>Гібридний, __ кВт</dd>
+              <dt>Потужність</dt><dd>__ кВт</dd>
+              <dt>Акумулятор</dt><dd>__ кВт·год</dd>
+              <dt>Панелі</dt><dd>__ шт.</dd>
+            </dl>
+          </div>
+        </article>
+        <article class="pf-card">
+          <div class="pf-media"><span class="pf-badge">шаблон</span><svg viewBox="0 0 24 24"><use href="#i-grid"/></svg></div>
+          <div class="pf-body">
+            <h3><!-- ЗАМІНІТЬ -->Кафе / магазин, м. Місто</h3>
+            <dl class="pf-facts">
+              <dt>Інвертор</dt><dd>Мережевий, __ кВт</dd>
+              <dt>Потужність</dt><dd>__ кВт</dd>
+              <dt>Акумулятор</dt><dd>—</dd>
+              <dt>Панелі</dt><dd>__ шт.</dd>
+            </dl>
+          </div>
+        </article>
+        <article class="pf-card">
+          <div class="pf-media"><span class="pf-badge">шаблон</span><svg viewBox="0 0 24 24"><use href="#i-shield"/></svg></div>
+          <div class="pf-body">
+            <h3><!-- ЗАМІНІТЬ -->Резервне живлення, м. Місто</h3>
+            <dl class="pf-facts">
+              <dt>Інвертор</dt><dd>Гібридний, __ кВт</dd>
+              <dt>Потужність</dt><dd>—</dd>
+              <dt>Акумулятор</dt><dd>__ кВт·год</dd>
+              <dt>Панелі</dt><dd>—</dd>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="proces">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Як це відбувається</span>
+        <h2>Як проходить робота</h2>
+      </div>
+      <div class="process-list">
+        <div class="process-item"><div class="process-num">01</div><div><h3>Заявка</h3><p>Ви залишаєте заявку на сайті або пишете в месенджер — я звʼязуюсь протягом дня.</p></div></div>
+        <div class="process-item"><div class="process-num">02</div><div><h3>Обговорення завдання</h3><p>Дізнаюсь, що саме потрібно: нова система, підключення купленого обладнання чи обслуговування.</p></div></div>
+        <div class="process-item"><div class="process-num">03</div><div><h3>Аналіз споживання й обладнання</h3><p>Оцінюю навантаження, дах або майданчик, наявну електромережу.</p></div></div>
+        <div class="process-item"><div class="process-num">04</div><div><h3>Підбір рішення</h3><p>Пропоную конкретну конфігурацію: панелі, інвертор, акумулятор під ваш випадок.</p></div></div>
+        <div class="process-item"><div class="process-num">05</div><div><h3>Погодження вартості</h3><p>Фіксуємо обсяг робіт і вартість до початку монтажу — без прихованих доплат.</p></div></div>
+        <div class="process-item"><div class="process-num">06</div><div><h3>Монтаж</h3><p>Встановлюю та підключаю обладнання з дотриманням техніки безпеки.</p></div></div>
+        <div class="process-item"><div class="process-num">07</div><div><h3>Налаштування і запуск</h3><p>Налаштовую систему, перевіряю роботу та пояснюю, як нею користуватись.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="vidguky">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Відгуки</span>
+        <h2>Що кажуть клієнти</h2>
+      </div>
+      <div class="reviews-placeholder">
+        <svg class="icon"><use href="#i-comment"/></svg>
+        <h3>Відгуки з'являться тут</h3>
+        <p>Розділ призначено для реальних відгуків клієнтів після виконаних робіт. Вигадані відгуки, кількість встановлень чи сертифікати тут навмисно не використовуються.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Питання і відповіді</span>
+        <h2>Часті запитання</h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Скільки коштує встановлення інвертора?</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><div class="faq-a-inner"><!-- ЗАМІНІТЬ: реальна вартість -->Вартість залежить від типу інвертора, потужності та складності підключення. Точну ціну назву після короткої консультації.</div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Скільки коштує встановлення сонячних панелей?</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><div class="faq-a-inner">Залежить від кількості панелей, типу даху чи майданчика та складності монтажу. Розраховую вартість індивідуально під ваш об'єкт.</div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Який інвертор обрати?</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><div class="faq-a-inner">Це залежить від того, чи потрібен вам резерв при відключеннях, робота з акумулятором, чи лише зниження споживання з мережі. Підбираю після аналізу вашого випадку.</div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Чи потрібні акумулятори?</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><div class="faq-a-inner">Акумулятори потрібні, якщо важливо мати світло під час відключень. Якщо мета — лише економія на рахунках, можна обійтись без них.</div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Скільки панелей потрібно для будинку?</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><div class="faq-a-inner">Кількість залежить від споживання, площі даху та бажаного результату. Розраховую індивідуально після аналізу навантаження.</div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Що працюватиме під час відключення електрики?</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><div class="faq-a-inner">Залежить від обраної конфігурації та ємності акумулятора — від окремих приладів до всього будинку. Обговорюємо це на етапі підбору рішення.</div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Скільки часу займає встановлення?</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><div class="faq-a-inner">Термін залежить від обсягу робіт — від одного дня для підключення інвертора до кількох днів для повної системи.</div></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Чи можна встановити обладнання, яке я купив самостійно?</span><svg class="icon"><use href="#i-chevron"/></svg></button>
+          <div class="faq-a"><div class="faq-a-inner">Так, це окремий і частий запит. Перевірю сумісність обладнання, виконаю монтаж, підключення та налаштування.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="kontakty">
+    <div class="container">
+      <div>
+        <div class="section-head">
+          <span class="eyebrow" style="color:#2AA6B1">Контакти</span>
+          <h2>Отримати консультацію</h2>
+          <p>Залиште заявку — зателефоную або напишу протягом дня, щоб обговорити ваш випадок.</p>
+        </div>
+        <div class="contact-info-item">
+          <svg class="icon"><use href="#i-phone"/></svg>
+          <div><h4>Телефон</h4><a href="tel:+380000000000"><!-- ЗАМІНІТЬ -->+380 (00) 000 00 00</a></div>
+        </div>
+        <div class="contact-info-item">
+          <svg class="icon"><use href="#i-telegram"/></svg>
+          <div><h4>Telegram / WhatsApp</h4><a href="#"><!-- ЗАМІНІТЬ: посилання -->@username</a></div>
+        </div>
+        <div class="contact-info-item">
+          <svg class="icon"><use href="#i-pin"/></svg>
+          <div><h4>Територія виїзду</h4><p><!-- ЗАМІНІТЬ -->Київська область та м. Київ</p></div>
+        </div>
+        <div class="contact-info-item">
+          <svg class="icon"><use href="#i-clock"/></svg>
+          <div><h4>Відповідаю</h4><p>Щодня, протягом кількох годин</p></div>
+        </div>
+      </div>
+
+      <div class="form-card" id="formCard">
+        <form id="leadForm">
+          <div class="form-row">
+            <label for="f-name">Ім'я</label>
+            <input id="f-name" name="name" type="text" placeholder="Як до вас звертатись" required>
+          </div>
+          <div class="form-two">
+            <div class="form-row">
+              <label for="f-phone">Телефон</label>
+              <input id="f-phone" name="phone" type="tel" placeholder="+380" required>
+            </div>
+            <div class="form-row">
+              <label for="f-city">Місто</label>
+              <input id="f-city" name="city" type="text" placeholder="Ваше місто" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="f-service">Що потрібно встановити?</label>
+            <select id="f-service" name="service" required>
+              <option value="" disabled selected>Оберіть варіант</option>
+              <option>Сонячні панелі</option>
+              <option>Інвертор</option>
+              <option>Акумуляторна система</option>
+              <option>Резервне живлення</option>
+              <option>Комплексна система під ключ</option>
+              <option>Вже маю обладнання — потрібен монтаж</option>
+              <option>Ще не знаю, потрібна консультація</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="f-comment">Коментар</label>
+            <textarea id="f-comment" name="comment" placeholder="Додаткові деталі (необов'язково)"></textarea>
+          </div>
+          <!-- приховані поля для CRM: джерело заявки та рекламна кампанія -->
+          <input type="hidden" name="source" id="f-source" value="">
+          <input type="hidden" name="campaign" id="f-campaign" value="">
+          <button type="submit" class="btn btn-primary btn-block">Надіслати заявку</button>
+          <p class="form-note">Натискаючи кнопку, ви погоджуєтесь на обробку контактних даних для звʼязку з вами.</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <h3 style="margin-bottom:8px;">Заявку надіслано</h3>
+          <p style="color:var(--text-light-muted); font-size:14.5px;">Дякую! Зателефоную або напишу протягом дня для консультації.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand" style="color:var(--text-light);">
+          <span class="brand-mark"><svg viewBox="0 0 24 24"><use href="#i-sun"/></svg></span>
+          <span class="brand-name" style="color:var(--text-light);"><!-- ЗАМІНІТЬ -->Ім'я Прізвище<span>монтаж сонячних систем</span></span>
+        </div>
+        <p>Встановлення, підключення та налаштування сонячних панелей, інверторів і акумуляторних систем для дому та бізнесу.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Послуги</h4>
+          <a href="#poslugy">Сонячні панелі</a>
+          <a href="#poslugy">Інвертори</a>
+          <a href="#poslugy">Акумулятори</a>
+          <a href="#poslugy">Резервне живлення</a>
+        </div>
+        <div class="footer-col">
+          <h4>Сторінка</h4>
+          <a href="#roboty">Мої роботи</a>
+          <a href="#proces">Як проходить робота</a>
+          <a href="#faq">Питання</a>
+          <a href="#kontakty">Контакти</a>
+        </div>
+        <div class="footer-col">
+          <h4>Звʼязок</h4>
+          <a href="tel:+380000000000">+380 (00) 000 00 00</a>
+          <a href="#">Telegram</a>
+          <a href="#">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> <!-- ЗАМІНІТЬ -->Ім'я Прізвище. Усі права захищено.</span>
+      <span>Територія виїзду: <!-- ЗАМІНІТЬ -->Київська область та м. Київ</span>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta">
+  <a href="tel:+380000000000" class="call"><svg class="icon" style="width:17px;height:17px;"><use href="#i-phone"/></svg>Подзвонити</a>
+  <a href="#" class="msg"><svg class="icon" style="width:17px;height:17px;"><use href="#i-telegram"/></svg>Написати</a>
+</div>
+
+<script>
+  // мобільне меню
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mainNav = document.getElementById('mainNav');
+  const burgerIcon = document.getElementById('burgerIcon');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    burgerIcon.innerHTML = isOpen ? '<use href="#i-close"/>' : '<use href="#i-menu"/>';
+  });
+  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    burgerIcon.innerHTML = '<use href="#i-menu"/>';
+  }));
+
+  // FAQ акордеон
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    const answer = item.querySelector('.faq-a');
+    btn.addEventListener('click', () => {
+      const isOpen = item.getAttribute('data-open') === 'true';
+      document.querySelectorAll('.faq-item').forEach(other => {
+        other.setAttribute('data-open', 'false');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.setAttribute('data-open', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Джерело заявки з UTM-міток (для CRM)
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById('f-source').value = params.get('utm_source') || 'сайт';
+  document.getElementById('f-campaign').value = params.get('utm_campaign') || '';
+
+  // Відправка форми (заглушка — підключіть реальний бекенд/CRM/email-сервіс)
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    // TODO: тут відправка даних форми на бекенд, у CRM або email-сервіс,
+    // а також подія конверсії для Google Ads / GA4, напр.:
+    // gtag('event', 'generate_lead', { form_id: 'leadForm' });
+    document.getElementById('formCard').classList.add('submitted');
+    document.getElementById('formSuccess').classList.add('show');
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
